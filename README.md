@@ -8,7 +8,7 @@ Build or outline a form to submit name, company, email address and an enquiry wi
 
 
 ### menu-item-app
-[View Demo]("https://enquiry-app.herokuapp.com/enquiry")
+[View Demo](https://enquiry-app.herokuapp.com/enquiry)
 
 Basic approach. 
 - [x] Set up environment.
