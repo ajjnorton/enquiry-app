@@ -14,5 +14,5 @@ Basic approach.
 - [x] Set up environment.
 - [x] Render the form view.
 - [x] Add form validators.
-- [ ] Add response message.
+- [x] Add response message.
 - [ ] Style the form.

@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { FormComponent } from './form/form.component';
+import { FormComponent,  MessageArchivedComponent } from './form/form.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 
 const ROUTES = [
   { path: 'enquiry', component:  FormComponent },
+  { path: 'thankyou', component:  ThankyouComponent },
   { path: '', redirectTo: 'enquiry', pathMatch: 'full' },
   { path: '**', redirectTo: 'enquiry', pathMatch: 'full' }
 ];
@@ -22,5 +24,6 @@ const ROUTES = [
 export class AppRoutingModule { }
 
 export const routableComponents = [
-  FormComponent
+  FormComponent,
+  MessageArchivedComponent
 ];

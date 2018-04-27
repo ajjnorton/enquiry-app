@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
+import { MAT_SNACK_BAR_DATA } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -17,9 +20,44 @@ export class FormComponent implements OnInit {
     enquiry: new FormControl('', [Validators.required])
   });
 
-  constructor() { }
+  constructor(public snackbar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
   }
 
+
+
+  /**
+   * Simutates the send and response from the enquiry form
+   * 
+   * @memberof FormComponent
+   */
+  sendEnquiry(){
+    console.log('sendEnquiry');
+    this.snackbar.openFromComponent(MessageArchivedComponent, {});
+
+    setTimeout(() => {
+      this.snackbar.dismiss();
+      this.router.navigate(['thankyou']);
+    }, 4000);
+  }
+
+
+
+}
+
+
+/**
+ * This component controlls the snackbar
+ * 
+ * @export
+ * @class MessageArchivedComponent
+ */
+@Component({
+  selector: 'your-snack-bar',
+  templateUrl: 'snackbar1.html',
+  styleUrls: ['./snackbar.scss']
+})
+export class MessageArchivedComponent {
+  constructor(@Inject(MAT_SNACK_BAR_DATA) public data: any) { }
 }

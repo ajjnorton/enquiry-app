@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MessageArchivedComponent } from './form/form.component';
 
 
 import {
@@ -10,17 +11,21 @@ import {
   MatButtonModule,
   MatIconModule,
   MatDividerModule,
-  MatInputModule
+  MatInputModule,
+  MatSnackBarModule,
+  MatProgressBarModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routableComponents } from './app-routing.module';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    routableComponents
+    routableComponents,
+    ThankyouComponent
   ],
   imports: [
     FormsModule,
@@ -32,9 +37,12 @@ import { AppRoutingModule, routableComponents } from './app-routing.module';
     MatIconModule,
     MatDividerModule,
     MatInputModule,
+    MatSnackBarModule,
+    MatProgressBarModule,
     FlexLayoutModule,
     AppRoutingModule
   ],
+  entryComponents: [MessageArchivedComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
