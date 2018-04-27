@@ -15,4 +15,4 @@ Basic approach.
 - [x] Render the form view.
 - [x] Add form validators.
 - [x] Add response message.
-- [ ] Style the form.
+- [x] Style the form.
