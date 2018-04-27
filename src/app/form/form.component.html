@@ -16,7 +16,7 @@
         <mat-form-field class="form-item">
           <input #name ngModel type="text" matInput placeholder="Enter your name" formControlName="name" autocomplete="off">
           <mat-error *ngIf="form.get('name').hasError('required')">
-            A name is required
+            A name is
             <strong>required</strong>
           </mat-error>
         </mat-form-field>
@@ -24,7 +24,7 @@
         <mat-form-field class="form-item">
           <input #company ngModel type="text" matInput placeholder="Enter the name of your company" formControlName="company" autocomplete="off">
           <mat-error *ngIf="form.get('company').hasError('required')">
-            A company name is required
+            A company name is
             <strong>required</strong>
           </mat-error>
         </mat-form-field>
@@ -41,7 +41,11 @@
         </mat-form-field>
 
         <mat-form-field class="form-item">
-          <textarea #enquiry maxlength="256" matInput placeholder="How can we help you?" matTextareaAutosize matAutosizeMinRows="1"></textarea>
+          <textarea #enquiry maxlength="256" matInput placeholder="How can we help you?" matTextareaAutosize matAutosizeMinRows="1" formControlName="enquiry" autocomplete="off"></textarea>
+            <mat-error *ngIf="form.get('enquiry').hasError('required')">
+              An enquiry is required
+              <strong>required</strong>
+            </mat-error>
           <mat-hint align="end">Characters used so far : {{enquiry.value.length}} / 256</mat-hint>
         </mat-form-field>
 
