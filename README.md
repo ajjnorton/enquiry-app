@@ -12,7 +12,7 @@ Build or outline a form to submit name, company, email address and an enquiry wi
 
 Basic approach. 
 - [x] Set up environment.
-- [ ] Render the form view.
-- [ ] Add form validators.
+- [x] Render the form view.
+- [x] Add form validators.
 - [ ] Add response message.
 - [ ] Style the form.

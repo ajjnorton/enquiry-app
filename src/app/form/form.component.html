@@ -3,18 +3,57 @@
   <mat-card>
     <mat-card-title>
       <div class="header-item">
-          <img src="assets/Beaver-Logo-White.svg" alt="Kiwi standing on oval">
+        <img src="assets/Beaver-Logo-White.svg" alt="Kiwi standing on oval">
       </div>
       <h2 class="title-text">HELLO</h2>
-      <h3 class="intro-text">We are a digital agency specialising in digital signage, web, mobile and interactive solutions. We'd love to help you too.</h3>
+      <h3 class="intro-text">We are a digital agency specialising in digital signage, web, mobile and interactive solutions. We'd love to help you
+        too.
+      </h3>
     </mat-card-title>
-    <mat-card-content>
+    <mat-card-content fxLayoutAlign="center center">
+      <form [formGroup]="form" fxLayout="column">
+
+        <mat-form-field class="form-item">
+          <input #name ngModel type="text" matInput placeholder="Enter your name" formControlName="name" autocomplete="off">
+          <mat-error *ngIf="form.get('name').hasError('required')">
+            A name is required
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-item">
+          <input #company ngModel type="text" matInput placeholder="Enter the name of your company" formControlName="company" autocomplete="off">
+          <mat-error *ngIf="form.get('company').hasError('required')">
+            A company name is required
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-item">
+          <input #email ngModel type="email" matInput placeholder="Enter your email address" formControlName="email" autocomplete="off">
+          <mat-error *ngIf="form.get('email').hasError('email')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="form.get('email').hasError('required')">
+            An mail address is
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-item">
+          <textarea #enquiry maxlength="256" matInput placeholder="How can we help you?" matTextareaAutosize matAutosizeMinRows="1"></textarea>
+          <mat-hint align="end">Characters used so far : {{enquiry.value.length}} / 256</mat-hint>
+        </mat-form-field>
+
+      </form>
+
 
     </mat-card-content>
-    
-    <mat-card-actions >
-     
+
+    <mat-card-actions class="button-enquiry" fxLayoutAlign="center center">
+      <button mat-raised-button [disabled]="!form.valid" color="primary">Send Enquiry</button>
     </mat-card-actions>
+
 
   </mat-card>
 </div>
