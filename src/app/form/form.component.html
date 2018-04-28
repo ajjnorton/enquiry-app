@@ -51,11 +51,17 @@
           <mat-hint align="end">Characters used so far : {{enquiry.value.length}} / 256</mat-hint>
         </mat-form-field>
 
+
+        <div class="recap-container" fxLayoutAlign="center center">
+          <re-captcha  formControlName="recaptchaReactive" (resolved)="resolved($event)" siteKey="6Lc4EVYUAAAAAJK-HEPzS5dFHB9TfSZhRzuuqJoL" required></re-captcha>
+        </div>
+
       </form>
-
-
+      
+      
     </mat-card-content>
 
+   
     <mat-card-actions class="button-enquiry" fxLayoutAlign="center center">
       <button mat-raised-button (click)="sendEnquiry()" [disabled]="!form.valid" color="primary">Send Enquiry</button>
     </mat-card-actions>

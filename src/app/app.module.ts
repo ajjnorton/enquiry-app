@@ -1,3 +1,5 @@
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -31,6 +33,8 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
+    RecaptchaModule.forRoot(),
+    RecaptchaFormsModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,

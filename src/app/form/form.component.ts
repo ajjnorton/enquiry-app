@@ -17,7 +17,8 @@ export class FormComponent implements OnInit {
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     company: new FormControl('', [Validators.required]),
-    enquiry: new FormControl('', [Validators.required])
+    enquiry: new FormControl('', [Validators.required]),
+    recaptchaReactive: new FormControl('', [Validators.required])
   });
 
   constructor(public snackbar: MatSnackBar, private router: Router) { }
@@ -42,6 +43,16 @@ export class FormComponent implements OnInit {
     }, 4000);
   }
 
+/**
+ * Manage response from recaptcha
+ * 
+ * @param {string} captchaResponse 
+ * @memberof FormComponent
+ */
+resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response ${captchaResponse}:`);
+}
+
 
 
 }
@@ -60,4 +71,8 @@ export class FormComponent implements OnInit {
 })
 export class MessageArchivedComponent {
   constructor(@Inject(MAT_SNACK_BAR_DATA) public data: any) { }
+
+
+
+
 }
