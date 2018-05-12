@@ -1,6 +1,6 @@
 # EnquireApp
 
-This project was generated with [Angular CLI] 6.0.1
+This project was updated to Angular 6
 
 
 ### Coding Challenge
