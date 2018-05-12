@@ -6,13 +6,17 @@
       <div class="header-item">
         <img src="assets/Beaver-Logo-White.svg" alt="Kiwi standing on oval">
       </div>
-      <h2 class="title-text">HELLO</h2>
-      <h3 class="intro-text">We are a digital agency specialising in digital signage, web, mobile and interactive solutions. We help leading brands bring digital to the forefront of their customer experience. We'd love to help you
-        too.
-      </h3>
+     
+      
+      
     </mat-card-title>
-    <mat-card-content fxLayoutAlign="center center">
-      <form [formGroup]="form" fxLayout="column">
+
+    <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+        <h2 style="z-index:999;" class="title-text">HELLO</h2>
+        <h3 class="intro-text">We are a digital agency specialising in digital signage, web, mobile and interactive solutions. We help leading brands bring digital to the forefront of their customer experience. We'd love to help you
+          too.
+        </h3>
+      <form fxLayout="column" [formGroup]="form" >
 
         <mat-form-field class="form-item">
           <input #name ngModel type="text" matInput placeholder="Enter your name" formControlName="name" autocomplete="off">
@@ -53,7 +57,7 @@
 
 
         <div class="recap-container" fxLayoutAlign="center center">
-          <re-captcha  formControlName="recaptchaReactive" (resolved)="resolved($event)" siteKey="6Lc4EVYUAAAAAJK-HEPzS5dFHB9TfSZhRzuuqJoL" required></re-captcha>
+          <re-captcha formControlName="recaptchaReactive" (resolved)="resolved($event)" siteKey="6Lc4EVYUAAAAAJK-HEPzS5dFHB9TfSZhRzuuqJoL" required></re-captcha>
         </div>
 
       </form>
